@@ -1,0 +1,83 @@
+:root {
+    --gold: #d4af37;
+    --gold-light: #f1e5ac;
+    --premium-pink: #f472b6;
+    --glass-bg: rgba(255, 255, 255, 0.45);
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    touch-action: manipulation;
+    background-color: #fff5f7;
+    height: 100vh;
+}
+
+.bg-gradient-premium {
+    background: radial-gradient(circle at 0% 0%, #fff 0%, #ffe4ec 50%, #fff1f5 100%);
+}
+
+.font-dancing {
+    font-family: 'Dancing Script', cursive;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+}
+
+.btn-premium-gold {
+    background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+    box-shadow: 0 15px 35px -5px rgba(236, 72, 153, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-premium-gold::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: rotate(45deg);
+    transition: 0.7s;
+}
+
+.btn-premium-gold:hover::after {
+    left: 100%;
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+.bg-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #f1e5ac 100%);
+}
+
+@keyframes heart-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 15px rgba(244, 114, 182, 0.6)); }
+}
+
+.animate-heart-pulse {
+    animation: heart-pulse 2s ease-in-out infinite;
+}
+
+#noBtn {
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Custom transitions for the letter sequence */
+.letter-glow {
+    text-shadow: 0 0 20px rgba(244, 114, 182, 0.3);
+}
+
+@media (max-width: 640px) {
+    .glass-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 2.5rem;
+    }
+}
